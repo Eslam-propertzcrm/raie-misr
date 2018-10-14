@@ -27,5 +27,5 @@ Auth::routes();
 
 Route::get('admin', function(){
 	return view('admin.test.index');
-});;
+});
 
