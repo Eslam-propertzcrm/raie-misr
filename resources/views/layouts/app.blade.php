@@ -4,7 +4,7 @@
 @include('inc.head')
 
 <body>
-    <div id="app">
+    <div class="cp-wrapper">
        @include('inc.LangPaths')
        @include('inc.nav')
 
@@ -12,6 +12,7 @@
             @include('inc.messages')
             @yield('content')
         </main>
+
     </div>
 
     <!-- Scripts -->

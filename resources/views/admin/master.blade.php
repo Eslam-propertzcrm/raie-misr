@@ -5,6 +5,7 @@
 <body class="skin-blue sidebar-mini"> <!-- dir="rtl" -->
 <div class="wrapper">
     @include('admin.partial.nav')
+	@include('inc.messages')
     @include('admin.partial.right-sideMenu')
 
     @yield('content')

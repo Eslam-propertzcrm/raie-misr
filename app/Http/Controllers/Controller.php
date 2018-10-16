@@ -30,7 +30,7 @@ class Controller extends BaseController
 
      public function validate($request , $array)
     {
-        $validator_result = Validator::make($request->all(), $array);
+        $validator_result = \Validator::make($request->all(), $array);
         if ($validator_result->fails())
             return response(['status'=>false, 'messages'=>$validator_result->messages()], 422);
     }
