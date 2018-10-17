@@ -33,8 +33,9 @@ Route::get('test', 'Api\Auth\RegisterController@test');
 
 
 Route::group(['middleware'=>'auth:api'], function(){
-	Route::resource('sections', 'Api\SectionsController', ['except' => ['create', 'edit']]);
-	Route::resource('notes', 'Api\NotesController', ['except' => ['create', 'edit']]);
-	Route::get('sections/{id}/notes', 'Api\NotesController@show');
+	Route::resource('aboutvisions', 'Api\AboutVisionController', ['except' => ['create', 'edit']]);
+	// Route::resource('sections', 'Api\SectionsController', ['except' => ['create', 'edit']]);
+	// Route::resource('notes', 'Api\NotesController', ['except' => ['create', 'edit']]);
+	// Route::get('sections/{id}/notes', 'Api\NotesController@show');
 });
 	// Route::delete('sections/{id}/notes', 'Api\NotesController@destroy');

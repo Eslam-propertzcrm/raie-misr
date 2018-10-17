@@ -25,7 +25,10 @@ Route::get('/', function () {
 Auth::routes();
 /* Route::get('/home', 'HomeController@index'); */
 
-Route::get('admin', function(){
-	return view('admin.test.index');
-});
 
+Route::group(['middleware'=>'auth'], function(){
+	Route::get('admin', function(){
+		return view('admin.test.index');
+	});
+	Route::resource('aboutvisions', 'AboutVisionController');
+});
