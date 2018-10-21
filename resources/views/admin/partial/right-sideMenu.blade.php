@@ -41,12 +41,12 @@
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>@lang($lang_right_side.'about_vision')</span> <i
+                    <i class="fa fa-dashboard"></i> <span>About Vision</span> <i
                             class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/aboutvisions/1/edit"><i class="fa fa-circle-o"></i> @lang($lang_right_side.'about') </a></li>
-                    <li><a href="/aboutvisions/2/edit"><i class="fa fa-circle-o"></i> @lang($lang_right_side.'vision') </a></li>
+                    <li><a href="/aboutvisions/1/edit"><i class="fa fa-circle-o"></i> About </a></li>
+                    <li><a href="/aboutvisions/2/edit"><i class="fa fa-circle-o"></i> Vision </a></li>
                 </ul>
             </li>
 

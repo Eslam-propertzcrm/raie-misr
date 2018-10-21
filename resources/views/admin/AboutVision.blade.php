@@ -28,7 +28,7 @@
 		                            </div><!-- /.form-group -->
 		                            <div class="form-group">
 		                                <label>description_ar</label>
-		                                <textarea name="description_ar" class="form-control" rows="3" placeholder="">{{$aboutVision->description_en}}</textarea>
+		                                <textarea name="description_ar" class="form-control" rows="3" placeholder="">{{$aboutVision->description_ar}}</textarea>
 		                            </div><!-- /.form-group -->
 		                        </div><!-- /.col -->
 		                        <div class="col-md-6">
@@ -38,7 +38,7 @@
 		                            </div><!-- /.form-group -->
 		                            <div class="form-group">
 		                                <label>description_en</label>
-		                                <textarea name="description_en" class="form-control" rows="3" placeholder="">{{$aboutVision->description_ar}}</textarea>
+		                                <textarea name="description_en" class="form-control" rows="3" placeholder="">{{$aboutVision->description_en}}</textarea>
 		                            </div><!-- /.form-group -->
 		                            <div class="form-group">
 		                                <button type="submit" class="btn btn-primary">Update</button>

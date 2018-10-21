@@ -18,7 +18,9 @@ Route::get('locale/{locale}',function($locale){
 })->name('switchLang');  //add name to router
  
 Route::get('/', function () {
-    return view('home');
+	$about = App\AboutVision::where('id', 1)->get();
+	$vision = App\AboutVision::where('id', 2)->get();
+    return view('home')->with(['about' => $about , 'vision' => $vision]);
 });
 
 //those two next lines has created automatically after running php artisan make:auth

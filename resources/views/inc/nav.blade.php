@@ -1,5 +1,5 @@
 @php $lang_nav = 'inc/nav.'; @endphp
-<header class="style1">
+        <header class="style1">
             <div class="topbar">
                 <div class="container">
                     <!-- <div class="top-links">
