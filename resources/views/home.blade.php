@@ -39,16 +39,16 @@
 							<div class="col-lg-6 col-md-6 col-sm-12">
 								<div class="cp-donation-box">
 									<div class="cp-text">
-										<h5><a href="../index.html">{{ $about[0]->title_ar }}</a></h5>
-										<p>{{ $about[0]->description_ar }}</p>
+										<h5><a href="../index.html">{{ @$about[0]->title_ar }}</a></h5>
+										<p>{{ @$about[0]->description_ar }}</p>
 									</div>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-12">
 								<div class="cp-donation-box">
 									<div class="cp-text">
-										<h5><a href="../index.html">{{ $vision[0]->title_ar }}</a></h5>
-										<p>{{ $vision[0]->description_ar }}</p>
+										<h5><a href="../index.html">{{ @$vision[0]->title_ar }}</a></h5>
+										<p>{{ @$vision[0]->description_ar }}</p>
 									</div>
 								</div>
 							</div>
@@ -68,15 +68,17 @@
 					</div>
 					<div class="col-lg-9 col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
 						<div class="row">
+							@foreach($liveServices as $liveService)
 							<div class="col-lg-2 col-md-6 col-sm-12">
 								<div class="cp-donation-box">
 									<div class="cp-text">
-										<p>التكافل الاجتماعى</p>
-										<p>4,000,000</p>
+										<p>{{ $liveService->title_ar }}</p>
+										<p>{{ $liveService->number }}</p>
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-2 col-md-6 col-sm-12">
+							@endforeach
+							<!-- <div class="col-lg-2 col-md-6 col-sm-12">
 								<div class="cp-donation-box">
 									<div class="cp-text">
 										<p>التعليم</p>
@@ -115,7 +117,7 @@
 										<p>4,000,000</p>
 									</div>
 								</div>
-							</div> 
+							</div>  -->
 					</div>
 				</div>
 			</div>

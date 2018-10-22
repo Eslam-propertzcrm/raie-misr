@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLiveServicesTable extends Migration
+class CreateHealthsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateLiveServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('live_services', function (Blueprint $table) {
+        Schema::create('healths', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title_ar');
             $table->string('title_en');
-            $table->string('number');
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateLiveServicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('live_services');
+        Schema::dropIfExists('healths');
     }
 }

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\LiveService;
+use App\Health;
 
-class LiveServiceController extends Controller
+class HealthController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -57,10 +57,10 @@ class LiveServiceController extends Controller
      */
     public function edit($id)
     {
-        $liveServices = LiveService::all();
-        if (! $liveServices) 
+        $healths = Health::all();
+        if (! $healths) 
             return rview('admin.liveservice')->with(['error' => 'ID NOT FOUND']);
-       return view('admin.liveservice')->with(['liveServices'=> $liveServices]);
+       return view('admin.health')->with(['healths'=> $healths]);
     }
 
     /**
@@ -73,16 +73,27 @@ class LiveServiceController extends Controller
     public function update(Request $request, $id)
     {
         foreach ($request->title_en as $key => $value) {
-            $liveService = LiveService::where('id', $key)->first();
-            if (! $liveService) 
-                return redirect('/liveservices/'.$id.'/edit')->with(['success' => 'ID NOT FOUND']);
+            $health = Health::where('id', $key)->first();
+            if (! $health) 
+                return redirect('/healths/'.$id.'/edit')->with(['success' => 'ID NOT FOUND']);
             /*if($result = $this->validate($request , ['title_en'=>'required|min:5','title_ar'=>'required|min:5',
                                                     'number'=>'required|min:5']))
-                return redirect('/liveservices/'.$id.'/edit')->with(['success' => $result]);*/
-            $liveService->title_en = $request->title_en[$key];
-            $liveService->title_ar = $request->title_ar[$key];
-            $liveService->number = $request->number[$key];
-            $liveService->save();
+                return redirect('/healths/'.$id.'/edit')->with(['success' => $result]);*/
+            // Image operations
+            $fileToStore = $health->image;
+            if ($request->hasFile('image_name['.$key.']')) {
+                if ($health->image != $health->image_path)
+                    // $this->getUrl($post->image_path) is equal to /public/posts_images/dsadad.jpg
+                    Storage::delete($health->image);
+                $path = $request->file('image_name['.$key.']')->store('/HealthImages');
+                $fileToStore = $path;
+                dd($path);
+            }
+
+            $health->title_en = $request->title_en[$key];
+            $health->title_ar = $request->title_ar[$key];
+            $health->image = $fileToStore;
+            $health->save();
         }
         return redirect('/liveservices/'.$id.'/edit')->with(['success'=>'Has been updated successfully']);
     }

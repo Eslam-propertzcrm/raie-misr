@@ -50,6 +50,18 @@
                 </ul>
             </li>
 
+             <li class="treeview">
+                <a href="/liveservices/1/edit">
+                    <i class="fa fa-dashboard"></i> <span>Live Services</span>
+                </a>
+            </li>
+
+            <li class="treeview">
+                <a href="/healths/1/edit">
+                    <i class="fa fa-dashboard"></i> <span>Health Section</span>
+                </a>
+            </li>
+
 
             <li><a href="#"><i class="fa fa-book"></i> <span>@lang($lang_right_side.'documentation')</span></a>
             </li>
