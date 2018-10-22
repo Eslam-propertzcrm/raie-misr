@@ -80,12 +80,14 @@ class HealthController extends Controller
                                                     'number'=>'required|min:5']))
                 return redirect('/healths/'.$id.'/edit')->with(['success' => $result]);*/
             // Image operations
+                // dd($request->toArray());
             $fileToStore = $health->image;
-            if ($request->hasFile('image_name['.$key.']')) {
-                if ($health->image != $health->image_path)
+            if ($request->image_name[$key] != null) {
+                // if ($health->image != $health->image_path)
                     // $this->getUrl($post->image_path) is equal to /public/posts_images/dsadad.jpg
-                    Storage::delete($health->image);
-                $path = $request->file('image_name['.$key.']')->store('/HealthImages');
+                    // Storage::delete($health->image);
+                $path = $request->file($key)->store('/HealthImages');
+                dd('ssss');
                 $fileToStore = $path;
                 dd($path);
             }
@@ -95,7 +97,7 @@ class HealthController extends Controller
             $health->image = $fileToStore;
             $health->save();
         }
-        return redirect('/liveservices/'.$id.'/edit')->with(['success'=>'Has been updated successfully']);
+        return redirect('/healths/'.$id.'/edit')->with(['success'=>'Has been updated successfully']);
     }
 
     /**
