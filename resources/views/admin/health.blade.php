@@ -17,7 +17,7 @@
 	                    </div>
 	                </div><!-- /.box-header -->
 	                 <div class="box-body">
-	                 	<form action="/healths/1" method="post">
+	                 	<form action="/healths/1" method="post" enctype="multipart/form-data">
 	                 		@csrf
 	                 		<input type="hidden" name="_method" value="put">
 		                    <div class="row">

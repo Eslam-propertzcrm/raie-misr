@@ -78,46 +78,6 @@
 								</div>
 							</div>
 							@endforeach
-							<!-- <div class="col-lg-2 col-md-6 col-sm-12">
-								<div class="cp-donation-box">
-									<div class="cp-text">
-										<p>التعليم</p>
-										<p>4,000,000</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-2 col-md-6 col-sm-12">
-								<div class="cp-donation-box">
-									<div class="cp-text">
-										<p>الصحة</p>
-										<p>4,000,000</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-2 col-md-6 col-sm-12">
-								<div class="cp-donation-box">
-									<div class="cp-text">
-										<p>البحث العلمى</p>
-										<p>4,000,000</p>
-									</div>
-								</div>
-							</div> 
-							<div class="col-lg-2 col-md-6 col-sm-12">
-								<div class="cp-donation-box">
-									<div class="cp-text">
-										<p>مناحى الحياة</p>
-										<p>4,000,000</p>
-									</div>
-								</div>
-							</div> 
-							<div class="col-lg-2 col-md-6 col-sm-12">
-								<div class="cp-donation-box">
-									<div class="cp-text">
-										<p>الجميع</p>
-										<p>4,000,000</p>
-									</div>
-								</div>
-							</div>  -->
 					</div>
 				</div>
 			</div>
@@ -130,46 +90,16 @@
 						<div class="row">
 							<div class="col-lg-1 col-md-6 col-sm-12">
 							</div>
+							@foreach($healths as $health)
 							<div class="col-lg-2 col-md-6 col-sm-12">
 								<div class="cp-donation-box">
 									<div class="cp-text">
-										<img src="{{ asset('images/web-04.png') }}">
-										<p>التعليم</p>
+										<img src="{{ asset( @$health->image) }}">
+										<p>{{ @$health->title_ar }}</p>
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-2 col-md-6 col-sm-12">
-								<div class="cp-donation-box">
-									<div class="cp-text">
-										<img src="{{ asset('images/web-05.png') }}">
-										<p>التكافل الاجتماعى</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-2 col-md-6 col-sm-12">
-								<div class="cp-donation-box">
-									<div class="cp-text">
-										<img src="{{ asset('images/web-06.png') }}">
-										<p>الصحة</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-2 col-md-6 col-sm-12">
-								<div class="cp-donation-box">
-									<div class="cp-text">
-										<img src="{{ asset('images/web-07.png') }}">
-										<p>البحث العلمى</p>
-									</div>
-								</div>
-							</div> 
-							<div class="col-lg-2 col-md-6 col-sm-12">
-								<div class="cp-donation-box">
-									<div class="cp-text">
-										<img src="{{ asset('images/web-08.png') }}">
-										<p>مناحى الحياة</p>
-									</div>
-								</div>
-							</div> 
+							@endforeach
 					</div>
 				</div>
 			</div>
@@ -186,159 +116,25 @@
 				</div>
 				<div class="cp-causes-inner-outer">
 					<div class="cp-masonary-layout">
+						@foreach($news as $new)
 						<div class="cp-masonary-item">
 							<div class="cp-causes-item">
 								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-img-01.jpg') }}" alt="">
+									<img src="{{ asset($new->image) }}" alt="">
 								</figure>
 								<div class="cp-text">
-									<ul class="meta-listed">
-										<li><i class="fa fa-user" aria-hidden="true"></i> راعى مصر</li>
+									<!-- <ul class="meta-listed">
+										<li><i class="fa fa-user" aria-hidden="true"></i>{{ asset($new->author) }}</li>
 										<li><i class="fa fa-clock-o" aria-hidden="true"></i> 30 Nov, 2016</li>
-									</ul>
-									<h5><a href="../falah/cause-detail.html">التطوير المستمر</a></h5>
+									</ul> -->
+									<h5><a href="../falah/cause-detail.html">{{ $new->title_ar }}</a></h5>
 									<div class="cp-progressbar-outer">
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .	
+										{{ $new->description_ar }}
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-md-img-01.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<ul class="meta-listed">
-										<li><i class="fa fa-user" aria-hidden="true"></i> راعى مصر </li>
-										<li><i class="fa fa-clock-o" aria-hidden="true"></i> 30 Nov, 2016</li>
-									</ul>
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-img-03.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<ul class="meta-listed">
-										<li><i class="fa fa-user" aria-hidden="true"></i> راعى مصر </li>
-										<li><i class="fa fa-clock-o" aria-hidden="true"></i> 30 Nov, 2016</li>
-									</ul>
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-md-img-02.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<ul class="meta-listed">
-										<li><i class="fa fa-user" aria-hidden="true"></i> راعى مصر </li>
-										<li><i class="fa fa-clock-o" aria-hidden="true"></i> 30 Nov, 2016</li>
-									</ul>
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-img-02.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<ul class="meta-listed">
-										<li><i class="fa fa-user" aria-hidden="true"></i> راعى مصر </li>
-										<li><i class="fa fa-clock-o" aria-hidden="true"></i> 30 Nov, 2016</li>
-									</ul>
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-md-img-03.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<ul class="meta-listed">
-										<li><i class="fa fa-user" aria-hidden="true"></i> راعى مصر </li>
-										<li><i class="fa fa-clock-o" aria-hidden="true"></i> 30 Nov, 2016</li>
-									</ul>
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-img-07.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<ul class="meta-listed">
-										<li><i class="fa fa-user" aria-hidden="true"></i> راعى مصر </li>
-										<li><i class="fa fa-clock-o" aria-hidden="true"></i> 30 Nov, 2016</li>
-									</ul>
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-md-img-04.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<ul class="meta-listed">
-										<li><i class="fa fa-user" aria-hidden="true"></i> راعى مصر </li>
-										<li><i class="fa fa-clock-o" aria-hidden="true"></i> 30 Nov, 2016</li>
-									</ul>
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-img-09.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<ul class="meta-listed">
-										<li><i class="fa fa-user" aria-hidden="true"></i> راعى مصر </li>
-										<li><i class="fa fa-clock-o" aria-hidden="true"></i> 30 Nov, 2016</li>
-									</ul>
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-								</div>
-							</div>
-						</div>
+						@endforeach
 					</div>
 					<div class="cp-btns-holder text-center">
 						<a href="../falah/cause.html" class="cp-btn-style_v3">عرض المزيد من الأخبار</a>
@@ -358,13 +154,14 @@
 				</div>
 				<div class="cp-causes-inner-outer">
 					<div class="cp-masonary-layout">
+						@foreach($finances as $finance)
 						<div class="cp-masonary-item">
 							<div class="cp-causes-item">
 								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-img-01.jpg') }}" alt="">
+									<img src="{{ asset($finance->image) }}" alt="">
 								</figure>
 								<div class="cp-text">
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
+									<h5><a href="../falah/cause-detail.html">{{ $finance->title_ar }}</a></h5>
 									<div class="cp-progressbar-outer">
 										<div class="cp-progressbar-inner">
 												<span class="percentage bar-left">1,000,000 ج.م</span>
@@ -372,7 +169,7 @@
 												<span class="percentage">1,000,000 ج.م</span>
 											</div>
 										</div>
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
+										{{ $finance->description_ar }}
 									</div>
 									<div class="bottom-holder">
 										<a href="../falah/cause-detail.html" class="cp-btn-style btn-donors">أتبرع الأن</a>
@@ -380,182 +177,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-md-img-01.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										<div class="cp-progressbar-inner">
-												<span class="percentage bar-left">1,000,000 ج.م</span>
-											<div class="progress-bar" style="width: 45%;">
-												<span class="percentage">1,000,000 ج.م</span>
-											</div>
-										</div>
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-									<div class="bottom-holder">
-										<a href="../falah/cause-detail.html" class="cp-btn-style btn-donors">أتبرع الأن</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-img-03.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										<div class="cp-progressbar-inner">
-												<span class="percentage bar-left">1,000,000 ج.م</span>
-											<div class="progress-bar" style="width: 40%;">
-												<span class="percentage">1,000,000 ج.م</span>
-											</div>
-										</div>
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-									<div class="bottom-holder">
-										<a href="../falah/cause-detail.html" class="cp-btn-style btn-donors">أتبرع الأن</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-md-img-02.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										<div class="cp-progressbar-inner">
-												<span class="percentage bar-left">1,000,000 ج.م</span>
-											<div class="progress-bar" style="width: 90%;">
-												<span class="percentage">1,000,000 ج.م</span>
-											</div>
-										</div>
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-									<div class="bottom-holder">
-										<a href="../falah/cause-detail.html" class="cp-btn-style btn-donors">أتبرع الأن</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-img-02.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										<div class="cp-progressbar-inner">
-												<span class="percentage bar-left">1,000,000 ج.م</span>
-											<div class="progress-bar" style="width: 75%;">
-												<span class="percentage">1,000,000 ج.م</span>
-											</div>
-										</div>
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-									<div class="bottom-holder">
-										<a href="../falah/cause-detail.html" class="cp-btn-style btn-donors">أتبرع الأن</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-md-img-03.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										<div class="cp-progressbar-inner">
-												<span class="percentage bar-left">1,000,000 ج.م</span>
-											<div class="progress-bar" style="width: 55%;">
-												<span class="percentage">1,000,000 ج.م</span>
-											</div>
-										</div>
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-									<div class="bottom-holder">
-										<a href="../falah/cause-detail.html" class="cp-btn-style btn-donors">أتبرع الأن</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-img-07.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										<div class="cp-progressbar-inner">
-												<span class="percentage bar-left">1,000,000 ج.م</span>
-											<div class="progress-bar" style="width: 56%;">
-												<span class="percentage">1,000,000 ج.م</span>
-											</div>
-										</div>
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-									<div class="bottom-holder">
-										<a href="../falah/cause-detail.html" class="cp-btn-style btn-donors">أتبرع الأن</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-md-img-04.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										<div class="cp-progressbar-inner">
-												<span class="percentage bar-left">1,000,000 ج.م</span>
-											<div class="progress-bar" style="width: 79%;">
-												<span class="percentage">1,000,000 ج.م</span>
-											</div>
-										</div>
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-									<div class="bottom-holder">
-										<a href="../falah/cause-detail.html" class="cp-btn-style btn-donors">أتبرع الأن</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cp-masonary-item">
-							<div class="cp-causes-item">
-								<figure class="cp-thumb">
-									<img src="{{ asset('images/resources/causes-img-09.jpg') }}" alt="">
-								</figure>
-								<div class="cp-text">
-									<h5><a href="../falah/cause-detail.html">فاعليات راعى مصر</a></h5>
-									<div class="cp-progressbar-outer">
-										<div class="cp-progressbar-inner">
-												<span class="percentage bar-left">1,000,000 ج.م</span>
-											<div class="progress-bar" style="width: 92%;">
-												<span class="percentage">1,000,000 ج.م</span>
-											</div>
-										</div>
-										نحن نعمل لخدمة المجتمع المصرى و خاصة الطبقة الفقيرة منه من خلال انشطة مختلفة و متنوعة .
-									</div>
-									<div class="bottom-holder">
-										<a href="../falah/cause-detail.html" class="cp-btn-style btn-donors">أتبرع الأن</a>
-									</div>
-								</div>
-							</div>
-						</div>
+						@endforeach
 					</div>
 					<div class="cp-btns-holder text-center">
 						<a href="../falah/cause.html" class="cp-btn-style_v3">عرض المزيد من التمويل الاجتماعى</a>

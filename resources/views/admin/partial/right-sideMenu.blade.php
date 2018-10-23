@@ -62,6 +62,17 @@
                 </a>
             </li>
 
+            <li class="treeview">
+                <a href="/news/1/edit">
+                    <i class="fa fa-dashboard"></i> <span>News</span>
+                </a>
+            </li>
+
+            <li class="treeview">
+                <a href="/finances/1/edit">
+                    <i class="fa fa-dashboard"></i> <span>Finance</span>
+                </a>
+            </li>
 
             <li><a href="#"><i class="fa fa-book"></i> <span>@lang($lang_right_side.'documentation')</span></a>
             </li>

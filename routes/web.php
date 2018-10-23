@@ -21,9 +21,16 @@ Route::get('/', function () {
 	$about = App\AboutVision::where('id', 1)->get();
 	$vision = App\AboutVision::where('id', 2)->get();
 	$liveServices = App\LiveService::all();
+	$healths = App\Health::all();
+	$news = App\News::all();
+	$finances = App\Finances::all();
     return view('home')->with(['about' => $about ,
     							'vision' => $vision, 
-    							'liveServices'=> $liveServices ]);
+    							'liveServices'=> $liveServices,
+    							'healths'=> $healths,
+    							'news'=> $news,
+    							'finances'=> $finances,
+    							 ]);
 });
 
 //those two next lines has created automatically after running php artisan make:auth
@@ -39,4 +46,6 @@ Route::group(['middleware'=>'auth'], function(){
 	Route::resource('aboutvisions', 'AboutVisionController');
 	Route::resource('liveservices', 'LiveServiceController');
 	Route::resource('healths', 'HealthController');
+	Route::resource('news', 'NewsController');
+	Route::resource('finances', 'FinanceController');
 });
